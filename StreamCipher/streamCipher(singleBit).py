@@ -3,10 +3,8 @@ import sys
 MSGS = ["Hello my name is Bob", "Goodbye from Stephen"]
 
 def strxor(a, b):     # xor two strings of different lengths
-    if len(a) > len(b):
-        return "".join([chr(ord(x) ^ ord(y)) for (x, y) in zip(a[:len(b)], b)])
-    else:
-        return "".join([chr(ord(x) ^ ord(y)) for (x, y) in zip(a, b[:len(a)])])
+    return "".join([chr(ord(a[0]) ^ ord(b[0]))])
+    
 
 def encrypt(key, msg):
     c = strxor(key, msg)
@@ -16,3 +14,5 @@ def encrypt(key, msg):
 
 key = "weiognwoingweoignwoiggoiwnegoiwngwoingwigngoiwngwoingwoignwiognwiongw"
 ciphertexts = [encrypt(key, msg) for msg in MSGS]
+
+
